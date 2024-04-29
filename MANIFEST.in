@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include custom_nutrich *.css
+recursive-include custom_nutrich *.csv
+recursive-include custom_nutrich *.html
+recursive-include custom_nutrich *.ico
+recursive-include custom_nutrich *.js
+recursive-include custom_nutrich *.json
+recursive-include custom_nutrich *.md
+recursive-include custom_nutrich *.png
+recursive-include custom_nutrich *.py
+recursive-include custom_nutrich *.svg
+recursive-include custom_nutrich *.txt
+recursive-exclude custom_nutrich *.pyc
