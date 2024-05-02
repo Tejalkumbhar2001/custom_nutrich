@@ -215,3 +215,13 @@ app_license = "MIT"
 # auth_hooks = [
 #	"custom_nutrich.auth.validate"
 # ]
+
+fixtures = [
+    {
+        "doctype": "Client Script",
+        "filters": [
+            ["name", "in", ["Set Einvoice Data"]],
+        ],
+    },
+   
+]

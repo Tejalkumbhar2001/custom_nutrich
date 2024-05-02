@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Invoice",
+  "enabled": 1,
+  "modified": "2024-04-29 17:01:09.724952",
+  "module": "Nutrich Customization",
+  "name": "Set Einvoice Data",
+  "script": "frappe.ui.form.on('Sales Invoice', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})\nfrappe.ui.form.on('Sales Invoice', {\n    refresh: function(frm) {\n        frappe.db.get_list(\"e-Invoice Log\", {\n            filters: {\n                sales_invoice: frm.doc.name\n            },\n            fields: ['acknowledgement_number', 'acknowledged_on','creation'],\n            limit: 1\n        }).then(function(result) {\n            if (result && result.length > 0) {\n                frm.set_value('custom_acknowledgement_number', result[0].acknowledgement_number);\n                frm.set_value('custom_acknowledged_on', result[0].acknowledged_on);\n                frm.set_value('custom_irn_date', result[0].creation);\n            }\n        });\n    }\n});\n",
+  "view": "Form"
+ }
+]
